@@ -19,6 +19,7 @@ async function exchangeData() {
 
     try {
         let response = await fetch('https://v6.exchangerate-api.com/v6/f521ed7113b674ee651ac2f4/latest/USD');
+        // let response = await fetch('https://v6.exchangerate-api.com/v6/e49c84788180106c156e9eef/latest/USD');
         let json = await response.json();
         exchangeRates = json.conversion_rates;
 
@@ -121,7 +122,7 @@ window.addEventListener('online', () => {
     exchangeData().then(() => {
         convertAmount();
     });
-    
+
 });
 
 window.addEventListener('offline', () => {
